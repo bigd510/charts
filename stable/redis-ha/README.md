@@ -1,4 +1,18 @@
+# ⚠️ Repo Archive Notice
+
+As of Nov 13, 2020, charts in this repo will no longer be updated.
+For more information, see the Helm Charts [Deprecation and Archive Notice](https://github.com/helm/charts#%EF%B8%8F-deprecation-and-archive-notice), and [Update](https://helm.sh/blog/charts-repo-deprecation/).
+
 # Redis
+
+----------------------------------------
+# Deprecation Warning
+*As part of the [deprecation timeline](https://github.com/helm/charts/#deprecation-timeline). We will move this to an official repository [here](https://github.com/DandyDeveloper/charts)*
+
+Please make PRs / Issues here from now on
+
+We will keep the changes in sync as best we can, but we will be notifying people to submit PRs here from now on instead. If you have any questions, feel free to get in touch with either of the maintainers. 
+----------------------------------------
 
 [Redis](http://redis.io/) is an advanced key-value cache and store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, sorted sets, bitmaps and hyperloglogs.
 
@@ -88,6 +102,7 @@ The following table lists the configurable parameters of the Redis chart and the
 | `persistentVolume.size`          | Size for the volume                                                                                                                                                                               | 10Gi                                                                                       |
 | `persistentVolume.annotations`   | Annotations for the volume                                                                                                                                                                        | `{}`                                                                                       |
 | `persistentVolume.reclaimPolicy` | Method used to reclaim an obsoleted volume. `Delete` or `Retain`                                                                                                                                  | `""`                                                                                       |
+| `emptyDir`                | Configuration of `emptyDir`, used only if persistentVolume is disabled and no hostPath specified                                                                                                                                  | `{}`                                                                                       |
 | `exporter.enabled`        | If `true`, the prometheus exporter sidecar is enabled                                                                                                                                                    | `false`                                                                                    |
 | `exporter.image`          | Exporter image                                                                                                                                                                                           | `oliver006/redis_exporter`                                                                 |
 | `exporter.tag`            | Exporter tag                                                                                                                                                                                             | `v0.31.0`                                                                                  |
@@ -111,6 +126,7 @@ The following table lists the configurable parameters of the Redis chart and the
 | `haproxy.customConfig`    | Allows for custom config-haproxy.cfg file to be applied. If this is used then default config will be overwriten                                                                                          | ``                                                                                         |
 | `haproxy.extraConfig`     | Allows to place any additional configuration section to add to the default config-haproxy.cfg                                                                                                            | ``                                                                                         |
 | `haproxy.resources`       | HAProxy resources                                                                                                                                                                                        | `{}`                                                                                       |
+| `haproxy.emptyDir`        | Configuration of `emptyDir`                                                                                                                                  | `{}`                                                                                       |
 | `haproxy.service.type`    | HAProxy service type "ClusterIP", "LoadBalancer" or "NodePort"                                                                                                                                           | `ClusterIP`                                                                                |
 | `haproxy.service.nodePort`    | HAProxy service nodePort value (haproxy.service.type must be NodePort)                                                                                                                               | not set                                                                                    |
 | `haproxy.service.annotations` | HAProxy service annotations                                                                                                                                                                          | `{}`                                                                                       |

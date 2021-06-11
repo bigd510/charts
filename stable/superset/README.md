@@ -1,4 +1,13 @@
+# ⚠️ Repo Archive Notice
+
+As of Nov 13, 2020, charts in this repo will no longer be updated.
+For more information, see the Helm Charts [Deprecation and Archive Notice](https://github.com/helm/charts#%EF%B8%8F-deprecation-and-archive-notice), and [Update](https://helm.sh/blog/charts-repo-deprecation/).
+
 # Apache superset
+
+## DEPRECATION NOTICE
+
+This chart is deprecated and no longer supported.
 
 ## Introduction
 
@@ -50,6 +59,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `initFile`                 | Content of init shell script                    | See [values.yaml](./values.yaml)                             |
 | `replicas`                 | Number of replicas of superset                  | `1`                                                          |
 | `extraEnv`                 | Extra environment variables passed to pods      | `{}`                                                         |
+| `extraArguments`           | Extra arguments passed to init_superset.sh      | `[]`                                                         |
 | `extraEnvFromSecret`       | The name of a Kubernetes secret (must be manually created in the same namespace) containing values to be added to the environment | `""` |
 | `deploymentAnnotations`              | Key Value pairs of deployment level annotations. Useful for 3rd party integrations | `{}` |
 | `persistence.enabled`      | Enable persistence                              | `false`                                                      |
